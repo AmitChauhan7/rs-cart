@@ -20,7 +20,7 @@ pipeline {
             steps {
                sh '''
                   npm install --save jslint
-                  jslint "*.js"
+                  node_modules/.bin/jslint "*.js"
                 '''
                }
 
