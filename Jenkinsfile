@@ -6,6 +6,7 @@ pipeline {
     }
 
     stages {
+
         stage('Install Node Dependencies') {
             steps {
                 sh '''
@@ -15,7 +16,16 @@ pipeline {
 
         }
 
+        stage('Lint Check') {
+            steps {
+               sh '''
+                  npm install --save jslint
+                  jslint "*.js"
+                '''
+               }
+
+            }
+
 
     }
-
 }
